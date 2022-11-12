@@ -4,12 +4,13 @@ import { faPlus, faCheck } from "@fortawesome/free-solid-svg-icons";
 import Snackbar from "@material-ui/core/Snackbar";
 import useStyles from "./snackbarStyle";
 import "./form.css";
+import { CategorySelect } from "../CategorySelect/CategorySelect";
 
 export function Form({
-  onSubmit,
   defaultValue = "",
   defaultOption = "default",
   buttonText,
+  onSubmit,
 }) {
   const classes = useStyles();
   const [task, setTask] = useState(defaultValue);
@@ -18,10 +19,6 @@ export function Form({
 
   function handleChange(event) {
     setTask(event.target.value);
-  }
-
-  function handleSelectChange(event) {
-    setOption(event.target.value);
   }
 
   function handleSubmit(event) {
@@ -37,33 +34,19 @@ export function Form({
   }
 
   return (
-    <div className="form">
-      <form className="form__form" onSubmit={handleSubmit}>
-        <div className="form__inputAndSelectWrapper">
+    <div className='form'>
+      <form className='form__form' onSubmit={handleSubmit}>
+        <div className='form__inputAndSelectWrapper'>
           <input
-            type="text"
+            type='text'
             value={task}
-            className="form__input"
+            className='form__input'
             onChange={handleChange}
-            maxLength="60"
+            maxLength='60'
           />
-          <select
-            className="form__select"
-            value={option}
-            onChange={handleSelectChange}
-          >
-            <option value="default" className="form__option">
-              no category
-            </option>
-            <option value="home">home</option>
-            <option value="work">work</option>
-            <option value="education">education</option>
-            <option value="shopping">shopping</option>
-            <option value="entertainment">entertainment</option>
-            <option value="health">health</option>
-          </select>
+          <CategorySelect value={option} onChange={setOption} />
         </div>
-        <button type="submit" className="form__approveButton" title="add">
+        <button type='submit' className='form__approveButton' title='add'>
           <FontAwesomeIcon icon={buttonText === "add" ? faPlus : faCheck} />
         </button>
       </form>
@@ -72,7 +55,7 @@ export function Form({
         open={emptyInput}
         autoHideDuration={3000}
         onClose={() => setEmptyInput(false)}
-        message="type a task"
+        message='type a task'
       ></Snackbar>
     </div>
   );
