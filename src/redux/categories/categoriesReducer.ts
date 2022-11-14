@@ -1,12 +1,14 @@
+import { v4 as uuidv4 } from "uuid";
 import {
   ADD_CATEGORY,
   EDIT_CATEGORY,
   REMOVE_CATEGORY,
   CHANGE_CATEGORY_COLOR,
-} from "./types";
-import { v4 as uuidv4 } from "uuid";
+} from "./actions";
+import {Category} from "../types";
+import {CategoryActionTypes} from './types';
 
-const initialState = [
+const initialState: Category[] = [
   {
     id: uuidv4(),
     description: "home",
@@ -34,7 +36,7 @@ const initialState = [
   },
 ];
 
-export function categoriesReducer(state = initialState, action) {
+export function categoriesReducer(state = initialState, action: CategoryActionTypes) {
   switch (action.type) {
     case ADD_CATEGORY:
       return [
