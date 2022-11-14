@@ -10,6 +10,7 @@
 .settings__changeCategory:hover,
 .settings__darkTheme:hover {
   border-color: #000;
+  cursor: pointer;
 }
 .settings__changeCategory_buttonAndDescription,
 .settings__darkTheme {
@@ -25,5 +26,5 @@
 }
 
 .settings__changeCategory_button:focus {
-  border: 0px;
+  border: 0;
 }

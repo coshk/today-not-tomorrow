@@ -1,10 +1,10 @@
 .categoriesEditor {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  width: 400px;
-  background-color: violet;
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*justify-content: space-between;*/
+  /*flex-wrap: nowrap;*/
+  /*width: 400px;*/
+  /*background-color: violet;*/
 }
 
 .category__categoriesList_title {
